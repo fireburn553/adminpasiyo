@@ -2,9 +2,10 @@ import "./sidebar.scss"
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import PersonAddIcon from '@mui/icons-material/PersonAdd';
 import Person2OutlinedIcon from '@mui/icons-material/Person2Outlined';
-import LogoutOutlinedIcon from '@mui/icons-material/LogoutOutlined';
+import {Button} from "@aws-amplify/ui-react"
 
-const Sidebar = () => {
+
+const Sidebar = ({signOut}) => {
     return (
         <div className="sidebar">
             <div className="top">
@@ -28,9 +29,7 @@ const Sidebar = () => {
                         <span>New Drivers</span></li>
                     <p className="title">USER</p>
                     <li>
-                        <LogoutOutlinedIcon className="icon" />
-                        
-                        <span>Logout</span>
+                        <Button onClick={signOut}>Sign out</Button>
                     </li>
                 </ul>
             </div>
