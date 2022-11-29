@@ -2,13 +2,13 @@ import "./listNewDriver.scss";
 import Sidebar from "../../components/sidebar/Sidebar";
 import Datable from "../../components/datatable/Datable";
 
-const ListNewDriver = () => {
+const ListNewDriver = ({signOut}) => {
   return (
     <div className="newDriverList">
-      <Sidebar/>
+      <Sidebar signOut={signOut} />
       <div className="newDriverListContainer">
         <h1 className="title">New Drivers</h1>
-        <Datable/>
+        {/* <Datable/> */}
       </div>
     </div>
   )

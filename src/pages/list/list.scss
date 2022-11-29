@@ -4,5 +4,14 @@
 
     .listContainer {
         flex: 6;
+
+        .title {
+            padding-top: 20px;
+            font-size: 16px;
+            color: black;
+            margin: 20px;
+        }
     }
+
+
 }

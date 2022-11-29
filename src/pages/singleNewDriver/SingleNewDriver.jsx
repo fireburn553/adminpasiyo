@@ -1,8 +1,14 @@
 import "./singleNewDriver.scss"
+import Sidebar from "../../components/sidebar/Sidebar";
 
-const SingleNewDriver = () => {
+const SingleNewDriver = ({signOut}) => {
   return (
-    <div>SingleNewDriver</div>
+    <div className="singleNewDriver">
+        <Sidebar signOut={signOut} />
+        <div className="singleNewDriverListContainer">
+        singleNewDriverListContainer
+        </div>
+    </div>
   )
 }
 

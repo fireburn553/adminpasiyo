@@ -1,7 +1,6 @@
 import Home from "./pages/home/Home"
 import List from "./pages/list/List"
 import Single from "./pages/single/Single"
-import New from "./pages/new/New"
 import {
   Routes,
   BrowserRouter,
@@ -20,13 +19,10 @@ function App({signOut}) {
           <Route path="/">
             <Route index element={<Home signOut={signOut}/>}/>
             <Route path="users">
-              <Route index element={<List/>}/>
-              <Route path=":userId" element={<Single/>}/> {/*need to change the id or to send*/}
-              <Route path="new" element={<New/>}/>
+              <Route index element={<List signOut={signOut}/>}/>
             </Route>
             <Route path="newDriver">
-              <Route index element={<ListNewDriver/>}/>
-              <Route path=":userId" element={<SingleNewDriver/>}/>
+              <Route index element={<ListNewDriver signOut={signOut}/>}/>
             </Route>
           </Route>
         </Routes>

@@ -3,6 +3,7 @@ import "./widgetRider.scss"
 import { listRides } from "../../../graphql/queries"
 import { API, graphqlOperation } from "aws-amplify"
 import { useState, useEffect } from 'react';
+import { Link } from "react-router-dom";
 
 const WidgetRider = () => {
 
@@ -15,7 +16,7 @@ const WidgetRider = () => {
                     listRides
                 )
             )
-            console.log(rideData);
+            // console.log(rideData);
             setRiders(rideData.data.listRides.items)
         } catch (error) {
             console.error(error)
@@ -34,7 +35,7 @@ const WidgetRider = () => {
                     }
                 )
             )
-            console.log(rideData);
+            // console.log(rideData);
             setActiveRiders(rideData.data.listRides.items)
         } catch (error) {
             console.error(error)
@@ -53,10 +54,12 @@ const WidgetRider = () => {
             <div className="left">
                 <span className="title">Driver</span>
                 <div className="activeRider">
-                    Active Rider: {activeRiders?.length}
+                    Total Riders: {riders?.length}
                 </div>
-                <span className="counter">Total Riders: {riders?.length}</span>
-                <span className="link">See all Drivers</span>
+                <span className="counter">Active Rider: {activeRiders?.length}</span>
+                <Link to="/users" style={{ textDecoration: "none" }}>
+                    <span className="link">See all Drivers</span>
+                </Link>
             </div>
             <div className="right">
                 <PersonOutlinedIcon className="icon" />
