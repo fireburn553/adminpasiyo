@@ -13,7 +13,9 @@ const WidgetRider = () => {
         try {
             const rideData = await API.graphql(
                 graphqlOperation(
-                    listRides
+                    listRides, {
+                    filter: { isVerified: { eq: true } }
+                }
                 )
             )
             // console.log(rideData);
@@ -32,6 +34,7 @@ const WidgetRider = () => {
                     listRides,
                     {
                         filter: { isActive: { eq: true } }
+
                     }
                 )
             )

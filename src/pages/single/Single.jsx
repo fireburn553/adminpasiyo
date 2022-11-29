@@ -68,7 +68,6 @@ const Single = ({ row, handleClose }) => {
 
   useEffect(() => {
     if (orders.length > 0) {
-      console.log(orders)
       transactionDate()
       
     }
