@@ -146,7 +146,9 @@ export const listRides = /* GraphQL */ `
         latitude
         longitude
         heading
+        rating
         isActive
+        isVerified
         orders {
           nextToken
         }
@@ -156,6 +158,15 @@ export const listRides = /* GraphQL */ `
           username
           email
           createdAt
+          userDetails{
+            firstName
+            middleName
+            lastName
+            profileImage
+            phoneNumber
+            id
+            birthDate
+          }
           
         }
         createdAt
@@ -172,10 +183,17 @@ export const getOrder = /* GraphQL */ `
       createdAt
       type
       status
+      payment
       originLatitude
       originLongitude
+      originName
       destinationLatitude
       destinationLongitude
+      destinationName
+      message
+      rating
+      comment
+      amount
       userId
       user {
         id
@@ -236,17 +254,32 @@ export const listOrders = /* GraphQL */ `
         createdAt
         type
         status
+        payment
         originLatitude
         originLongitude
+        originName
         destinationLatitude
         destinationLongitude
+        destinationName
+        message
+        rating
+        comment
+        amount
         userId
         user {
           id
           username
           email
           createdAt
-
+          userDetails {
+            firstName
+            middleName
+            lastName
+            profileImage
+            phoneNumber
+            id
+            birthDate
+          }
         }
         rideId
         ride {
@@ -259,10 +292,54 @@ export const listOrders = /* GraphQL */ `
           userId
           createdAt
           updatedAt
+          user{
+            id
+            username
+            userDetails{
+              firstName
+              middleName
+              lastName
+              profileImage
+              phoneNumber
+              id
+              birthDate
+            }
+          }
         }
         updatedAt
       }
       nextToken
+    }
+  }
+`;
+
+export const getFare = /* GraphQL */ `
+  query getFare($id: ID!) {
+    getFare(id: $id) {
+      id
+      createdAt
+      updatedAt
+      motorcycleBaseFare
+      motorcycleAdditionalFare
+      tricycleBaseFare
+      tricycleAdditionalFare
+    }
+  }
+`;
+
+export const getUserDetails = /* GraphQL */ `
+  query getUserDetails($id: ID!) {
+    getUserDetails(id: $id) {
+      id
+      firstName
+      middleName
+      lastName
+      birthDate
+      phoneNumber
+      userId
+      profileImage
+      createdAt
+      updatedAt
     }
   }
 `;

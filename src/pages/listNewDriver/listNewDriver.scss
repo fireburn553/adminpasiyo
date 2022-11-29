@@ -1,8 +1,8 @@
-.list {
+.newDriverList {
     display: flex;
     width: 100%;
 
-    .listContainer {
+    .newDriverListContainer {
         flex: 6;
 
         .title {
@@ -12,6 +12,4 @@
             margin: 20px;
         }
     }
-
-
 }

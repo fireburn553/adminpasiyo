@@ -1,36 +1,33 @@
 import Home from "./pages/home/Home"
-import Login from "./pages/login/Login"
 import List from "./pages/list/List"
 import Single from "./pages/single/Single"
-import New from "./pages/new/New"
 import {
   Routes,
   BrowserRouter,
   Route,
 } from "react-router-dom";
-import {withAuthenticator, Button, Heading} from "@aws-amplify/ui-react"
+import {withAuthenticator} from "@aws-amplify/ui-react"
 import "@aws-amplify/ui-react/styles.css"
+import ListNewDriver from "./pages/listNewDriver/ListNewDriver";
+import SingleNewDriver from "./pages/singleNewDriver/SingleNewDriver"
 
-function App({signOut, user}) {
+function App({signOut}) {
   return (
     <div className="App">
-      {/* <div style={StyleSheet.container}>
-        <Heading level={1}>Hello {user.username}</Heading>
-        <Button onClick={signOut}>Sign out</Button>
-      </div> */}
       <BrowserRouter>
         <Routes>
           <Route path="/">
-            <Route index element={<Home />}/>
-            <Route path="login" element={<Login/>}/>
+            <Route index element={<Home signOut={signOut}/>}/>
             <Route path="users">
-              <Route index element={<List/>}/>
-              <Route path=":userId" element={<Single/>}/> {/*need to change the id or to send*/}
-              <Route path="new" element={<New/>}/>
+              <Route index element={<List signOut={signOut}/>}/>
+            </Route>
+            <Route path="newDriver">
+              <Route index element={<ListNewDriver signOut={signOut}/>}/>
             </Route>
           </Route>
         </Routes>
       </BrowserRouter>
+
     </div>
 
   );
