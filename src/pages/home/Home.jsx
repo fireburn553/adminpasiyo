@@ -45,12 +45,12 @@ const Home = ({ signOut }) => {
           {orders && <WidgetEarnings orders={orders} />}
           <WidgetBaseFare />
         </div>
+        <div className="charts">
+          <Charts title="Last 6 months (Revenue)" aspect={2 / 0.55} />
+        </div>
         <div className="listContainer">
           <div className="listTitle">Latest Transactions</div>
           {orders && <Table orders={orders} />}
-        </div>
-        <div className="charts">
-          <Charts title="Last 6 months (Revenue)" aspect={2 / 0.55} />
         </div>
       </div>
     </div>
