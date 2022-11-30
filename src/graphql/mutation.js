@@ -14,3 +14,24 @@ export const updateFare = /* GraphQL */ `
     }
   }
 `;  
+
+export const updateRide = /* GraphQL */ `
+  mutation UpdateRide(
+    $input: UpdateRideInput!
+    $condition: ModelRideConditionInput
+  ) {
+    updateRide(input: $input, condition: $condition) {
+      id
+      type
+      createdAt
+      isActive
+      isVerified
+      rating
+      heading
+      latitude
+      longitude
+      updatedAt
+      userId
+    }
+  }
+`;
