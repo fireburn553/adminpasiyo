@@ -30,7 +30,6 @@ const Home = ({ signOut }) => {
     }
   }
 
-
   useEffect(() => {
     fecthOrders()
 
