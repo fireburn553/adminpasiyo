@@ -1,6 +1,8 @@
 {
   "name": "adminpasiyo",
+  "homepage": "http://pasiyo.tech",
   "version": "0.1.0",
+  "description": "my react application",
   "private": true,
   "dependencies": {
     "@aws-amplify/ui-react": "^4.0.1",
